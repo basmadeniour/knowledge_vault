@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Shopping Chart</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+<body>
+    <div class="container">
+    <div class="homeimg">
+        <nav class="navbar navbar-expand-sm navbar-dark bg-dark" > 
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#"><i class="fa-regular fa-bookmark " style="font-size: 30px;"></i></a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="mynavbar">
+                <ul class="navbar-nav me-auto">
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Scientific</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Historic</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Fantasy</a>
+                  </li>
+                </ul>
+                <form class="d-flex">
+                  <input class="form-control me-4" type="text" placeholder="Search">
+                  <i class="fa-solid fa-bag-shopping" id="cart-icon" ></i>
+                  <i class="fa-solid fa-user " id="usericon"></i>
+                  <button class="btn btn-primary" id="loginbtn" type="button">login</button>
+                </form>
+              </div>
+            </div>
+          </nav>
+
+                 <div class="divlayer">
+                 <h2 class="libh2">Knowledge Vault</h2>
+                 <p class="pread">Reading is the gateway to knowledge and a means of acquiring wisdom and culture across ages. Since the dawn of civilizations, books and manuscripts have been considered valuable treasures, as they carry human experiences, document history, and contribute to the development of thought. Reading is not just a hobby, but a necessity for nurturing the mind and expanding individual perspectives.</p>
+                 </div>
+
+          <form action="/action_page.php " id="hiddenform" >
+           <div class="form-group">
+            <label for="text">User name:</label>
+            <input type="text" class="form-control" id="username" placeholder="Enter your name" name="username">
+          </div>
+           <div class="form-group">
+              <label for="email">Email:</label>
+              <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+            </div>
+            <div class="form-group">
+              <label for="pwd">Password:</label>
+              <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pswd">
+            </div>
+            <div class="form-group form-check">
+              <label class="form-check-label">
+                <input class="form-check-input" type="checkbox" name="remember"> Remember me
+              </label>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+
+          <form action="/action_page.php " id="rigsterform" >
+            <div class="form-group">
+             <label for="text">User name:</label>
+             <input type="text" class="form-control" id="username" placeholder="Enter your name" name="username">
+           </div>
+            <div class="form-group">
+               <label for="email">Email:</label>
+               <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+             </div>
+             <div class="form-group">
+               <label for="pwd">Password:</label>
+               <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pswd">
+             </div>
+             <div class="form-group form-check">
+               <label class="form-check-label">
+                 <input class="form-check-input" type="checkbox" name="remember"> Remember me
+               </label>
+             </div>
+             <button type="submit" class="btn btn-primary">Sign Up</button>
+           </form>
+
+           <!-- Hidden welcome message -->
+               <div id="welcomeDiv" style="display: none; text-align: center; margin-top: 50px; background-color: rgb(248, 249, 251);">
+                    <h1>Welcome, <span id="userEmail"></span>!</h1>
+                    <p>Account Home</p>
+                    <i></i>
+                    <span></span>
+                    <hr>
+                    <p>Profile Details</p>
+                    <i></i>
+                    <span></span>
+                    <hr>
+                    <p>Info</p>
+                    <i></i>
+                    <span></span>
+                    <hr>
+                    <p>Delete Acc</p>
+                    <i></i>
+                    <span></span>
+                    <hr>
+                    <button id="logoutBtn" class="btn btn-danger">Logout</button>
+                    <button id="cancelbtn" class="btn btn-success">cancel</button>
+                       </div>   <!--welcome message page-->
+
+    </div>      <!--homeimg-->
+
+    <div class="cart">
+      <h2 class="cart-title">Your Cart</h2>
+  
+      <!-- Cart Content -->
+      <div class="cart-content">
+          <!-- Cart items will be added dynamically here -->
+      </div>
+  
+      <!-- Total Section -->
+      <div class="total">
+          <div class="total-title">Total</div>
+          <div class="total-price">0$</div>
+      </div>
+  
+      <!-- Buy Now Button -->
+      <button type="button" class="btn-buy">Buy Now</button>
+  
+      <!-- Close Cart Icon -->
+      <i class="fa-solid fa-xmark" id="close-cart"></i>
+  </div>
+  
+
+   <section class="shop container">
+    <h2 class="section-title">Shop products</h2>
+    <div class="shop-content">
+      <!--1-->
+      <div class="product-box">
+        <img src="images/download.jpeg" alt="" class="product-img">
+        <h2 class="product-title">Blue Cat Glasses</h2>
+        <p class="product-details">Eyeglasses are wearable accessories and medical devices that help you see. They adjust light before it enters your eyes, making up for what your eyes can't do.</p>
+        <span class="price">25$</span>
+        <i class="fa-solid fa-bag-shopping add-cart"></i>
+      </div>
+      <!--2-->
+      <div class="product-box">
+        <img src="images/images (2).jpeg" alt="" class="product-img">
+        <h2 class="product-title">Scientific Books</h2>
+        <p class="product-details">A fantastic science book can wow you, entertain you and change the way you think, all over the course of a few hundred pages. It can also act as a source of inspiration.</p>
+        <span class="price">22$</span>
+        <i class="fa-solid fa-bag-shopping add-cart"></i>
+      </div>
+      <!--3-->
+      <div class="product-box">
+        <img src="images//download (2).jpeg" alt="" class="product-img">
+        <h2 class="product-title">Historic Books</h2>
+        <p class="product-details">If the mere mention of ‘history books’ is enough to conjure up memories
+           of fighting back yawns in your middle school classroom, then chances are you haven’t been looking in the right places.</p>
+        <span class="price">18$</span>
+       <i class="fa-solid fa-bag-shopping add-cart"></i>
+     </div>
+     <!--4-->
+     <div class="product-box">
+      <img src="images/download (1).jpeg" alt="" class="product-img">
+      <h2 class="product-title">Magic Books</h2>
+      <p class="product-details">These are all books that deal with magic: wands, spells, curses, potions, hexes, thoughts (mind-magic), art, symbols,
+         rituals, magical languages, witchcraft, etc.</p>
+      <span class="price">32$</span>
+     <i class="fa-solid fa-bag-shopping add-cart"></i>
+   </div>
+    <!--5-->
+    <div class="product-box">
+      <img src="images/images (3).jpeg" alt="" class="product-img">
+      <h2 class="product-title">Engineering Books</h2>
+      <p class="product-details">ndustrial engineering combines technical and managerial knowledge to optimize processes, systems, and organizations, playing a crucial role in improving productive efficiency.</p>
+      <span class="price">28$</span>
+     <i class="fa-solid fa-bag-shopping add-cart"></i>
+   </div>
+    <!--6-->
+    <div class="product-box">
+      <img src="images/R.jpeg" alt="" class="product-img">
+      <h2 class="product-title">Fantasy Books</h2>
+      <p class="product-details">Fantasy is a genre that uses magic and other supernatural forms as a primary element of plot, theme, and/or setting. </p>
+      <span class="price">40$</span>
+     <i class="fa-solid fa-bag-shopping add-cart"></i>
+   </div>
+    <!--7-->
+    <div class="product-box">
+      <img src="images/OIP.jpeg" alt="" class="product-img">
+      <h2 class="product-title">Kids Books</h2>
+      <p class="product-details">The fun tale of the gingerbread man is re-told here with beautiful illustrations, reading comprehension questions,
+         and fun activities, including a recipe for Gingerbread Men. </p>
+      <span class="price">15$</span>
+     <i class="fa-solid fa-bag-shopping add-cart"></i>
+   </div>
+    <!--8-->
+    <div class="product-box">
+      <img src="images/OIP (3).jpeg" alt="" class="product-img">
+      <h2 class="product-title">Food Books</h2>
+      <p class="product-details">The traditional cookbook lays out a profusion of recipes for the reader to make in their own home,
+         the author acting as a guide on how to make a particular dish. It’s a great way to share new cooking methods.</p>
+      <span class="price">18$</span>
+     <i class="fa-solid fa-bag-shopping add-cart"></i>
+   </div>
+    <!--9-->
+    <div class="product-box">
+      <img src="images/OIP (4).jpeg" alt="" class="product-img">
+      <h2 class="product-title">Medicine Books</h2>
+      <p class="product-details">Deliver the best possible care to your patients with personal drug decision support from UpToDate® Lexidrug™ (formerly Lexicomp®) and make safe,
+         evidence-based medication and therapeutic decisions</p>
+      <span class="price">38$</span>
+     <i class="fa-solid fa-bag-shopping add-cart"></i>
+   </div>
+    <!--10-->
+    <div class="product-box">
+      <img src="images/download (7).jpeg" class="product-img">
+      <h2 class="product-title">programming Books</h2>
+      <p class="product-details">f we find a person with a rare intellect, we should ask him about the books he reads. A book can define a person’s nature and intelligence. If you are a coder, you should be also a good reader because it
+         develops the mind and the mind is your weapon.</p>
+      <span class="price">50$</span>
+     <i class="fa-solid fa-bag-shopping add-cart"></i>
+   </div>
+    <!--11-->
+    <div class="product-box">
+      <img src="images/OIP (5).jpeg" alt="" class="product-img">
+      <h2 class="product-title">Nature Books</h2>
+      <p class="product-details">Need another excuse to treat yourself to a new book this week? We've got you
+         covered with the buzziest new releases of the day, according to early.</p>
+      <span class="price">28$</span>
+     <i class="fa-solid fa-bag-shopping add-cart"></i>
+   </div>
+    <!--12-->
+    <div class="product-box">
+      <img src="images/th.jpeg" alt="" class="product-img">
+      <h2 class="product-title">Herbal Books</h2>
+      <p class="product-details">As an herbalist, I’m often asked about the best herbalism books to learn from and which ones make my must-have list.
+         After all, YouTube, blog articles, and podcasts can only take you so far!</p>
+      <span class="price">20$</span>
+     <i class="fa-solid fa-bag-shopping add-cart"></i>
+   </div>     
+    </div>  <!--shop-content-->   
+   </section>
+   
+
+   </div>     <!--container-->
+   <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"> </script>
+</body>
+</html>
